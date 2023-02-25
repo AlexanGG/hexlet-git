@@ -1,17 +1,21 @@
 <?php
 
-function getChunked($array)
+function getChunked($array): array
 {
     if (empty($array)) {
         return [];
     }
 
+    $result = [];
+
     foreach ($array as $arr) {
         if (!is_array($arr)) {
             continue;
         }
+
         $result = array_chunk($arr, 2, true);
     }
+
     return $result;
 }
 
